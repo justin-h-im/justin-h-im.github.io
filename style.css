@@ -79,7 +79,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 4rem 1rem 2rem;
+  padding: 0rem 1rem 2rem;
   gap: 6rem;
 }
 
@@ -231,6 +231,65 @@ footer {
   color: #777;
   background-color: #1a1a1a;
 }
+
+.footer {
+  background-color: #1a1a1a;
+  padding: 3rem 2rem;
+  color: #999;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer h3 {
+  font-size: 1.6rem;
+  color: #cccccc;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  color: #888;
+}
+
+.footer a {
+  color: #3b5b7c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #b55329;
+}
+
+.footer-credit {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #3b5b7c;
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  z-index: 999;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: #b55329;
+  transform: scale(1.1);
+}
+
+
 
 @media (max-width: 768px) {
   header {
