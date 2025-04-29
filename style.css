@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #1a1a1a;
@@ -49,6 +53,51 @@ header.shrink {
   letter-spacing: 1px;
   transition: color 0.2s ease-out;
 }
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1a1a1a;
+  border: 1px solid #2c2c2c;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  min-width: 150px;
+  z-index: 200;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #3b5b7c;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #b55329;
+  color: #1a1a1a;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.contact-text {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+  white-space: nowrap;
+}
+
 
 .brand:hover {
   color: #b55329;
