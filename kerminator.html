@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kerminator | Justin Im</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="brand">Justin Im</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#experience">Experience</a>
+        <div class="nav-item dropdown">
+          <a href="index.html#contact" class="nav-link">Contact ▾</a>
+          <div class="dropdown-menu">
+            <div class="contact-text">imjustin679@gmail.com</div>
+            <div class="contact-text">+1 (925) 399 9234</div>
+            <a href="https://github.com/justin-h-im" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-hero-content">
+        <h1>Kerminator</h1>
+        <p>Custom designed robotic manipulator with CAN bus integration</p>
+        <a href="index.html#projects" class="button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="project-pictures">
+      <div class="container">
+        <h2>Project Gallery</h2>
+        <div class="picture-grid">
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/kerminator-full.jpg" alt="Kerminator Full View" />
+            <p>Complete robotic manipulator assembly</p>
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/kerminator-mechanical.jpg" alt="Mechanical Components" />
+            <p>3D printed mechanical components and assembly</p>
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/kerminator-control.jpg" alt="Control System" />
+            <p>Arduino-based motor control system</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-description">
+      <div class="container">
+        <h2>Project Description</h2>
+        <div class="description-content">
+          <div class="description-text">
+            <h3>Overview</h3>
+            <p>The Kerminator is a custom-designed robotic manipulator with advanced CAN bus integration for precise control and coordination. Built for research applications in robotics and automation, this project demonstrates the integration of mechanical design, embedded systems, and control theory.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>6-degree-of-freedom robotic arm with high precision servo control</li>
+              <li>Distributed control system using CAN bus network</li>
+              <li>Modular design for easy maintenance and upgrades</li>
+              <li>Safety interlocks and emergency stop functionality</li>
+              <li>Real-time position feedback and control</li>
+              <li>ROS integration capabilities for advanced robotics applications</li>
+              <li>Custom 3D printed mechanical components</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <p>The robotic arm utilizes Arduino-based motor controllers for each joint, communicating through a CAN bus network for distributed control. The mechanical design incorporates 3D printed components for rapid prototyping and customization. The system includes position sensors, limit switches, and safety features to ensure reliable operation.</p>
+            
+            <h3>Challenges & Solutions</h3>
+            <p>The main challenge was achieving precise coordination between multiple joints while maintaining smooth motion. This was solved through careful tuning of PID controllers and implementing a master-slave communication protocol over the CAN bus. Another challenge was ensuring mechanical stability, which was addressed through iterative design improvements and material selection.</p>
+            
+            <h3>Results</h3>
+            <p>The Kerminator successfully demonstrated precise positioning capabilities with sub-millimeter accuracy. The modular design allowed for easy integration of additional sensors and tools, making it a versatile platform for robotics research. The project provided valuable insights into distributed control systems and mechanical design optimization.</p>
+          </div>
+          
+          <div class="project-details">
+            <h3>Project Details</h3>
+            <div class="detail-item">
+              <strong>Duration:</strong> 6 months
+            </div>
+            <div class="detail-item">
+              <strong>Team Size:</strong> 2 engineers
+            </div>
+            <div class="detail-item">
+              <strong>Role:</strong> Lead Robotics Engineer
+            </div>
+            <div class="detail-item">
+              <strong>Technologies:</strong> Arduino, CAN bus, Python, 3D Printing
+            </div>
+            <div class="detail-item">
+              <strong>Tools:</strong> Arduino IDE, Fusion 360, Git, ROS
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h3>Justin Im</h3>
+    <p>Robotics Engineer • UCR Highlander Racing</p>
+    <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-credit">&copy; 2025 Justin Im. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FSAE VCU | Justin Im</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="brand">Justin Im</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#experience">Experience</a>
+        <div class="nav-item dropdown">
+          <a href="index.html#contact" class="nav-link">Contact ▾</a>
+          <div class="dropdown-menu">
+            <div class="contact-text">imjustin679@gmail.com</div>
+            <div class="contact-text">+1 (925) 399 9234</div>
+            <a href="https://github.com/justin-h-im" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-hero-content">
+        <h1>FSAE VCU</h1>
+        <p>Vehicle Control Unit for FSAE electric vehicle with advanced motor control and safety systems</p>
+        <a href="index.html#projects" class="button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="project-pictures">
+      <div class="container">
+        <h2>Project Gallery</h2>
+        <div class="picture-grid">
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/fsae-vcu-main.jpg" alt="FSAE VCU Main Board" />
+            <p>Main VCU board with motor controllers and safety systems</p>
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/fsae-vcu-wiring.jpg" alt="VCU Wiring and Connections" />
+            <p>High-current wiring and connector system for motor control</p>
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/fsae-vcu-testing.jpg" alt="VCU Testing Setup" />
+            <p>VCU undergoing comprehensive testing and validation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-description">
+      <div class="container">
+        <h2>Project Description</h2>
+        <div class="description-content">
+          <div class="description-text">
+            <h3>Overview</h3>
+            <p>The FSAE VCU (Vehicle Control Unit) is a sophisticated electronic control system designed specifically for Formula SAE electric vehicles. This project represents the heart of the electric powertrain, responsible for motor control, safety monitoring, and vehicle performance optimization in high-performance racing conditions.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>Advanced motor control with field-oriented control (FOC) algorithms</li>
+              <li>Real-time safety monitoring and emergency shutdown systems</li>
+              <li>High-current switching capabilities for electric motor control</li>
+              <li>Comprehensive fault detection and diagnostic systems</li>
+              <li>CAN bus communication for system integration</li>
+              <li>Temperature and current monitoring with automatic protection</li>
+              <li>Configurable motor parameters for performance tuning</li>
+              <li>Fail-safe operation with redundant safety circuits</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <p>The VCU is built around a high-performance microcontroller with dedicated motor control peripherals. It implements advanced motor control algorithms including field-oriented control for optimal efficiency and torque control. The system features high-current MOSFET switching circuits capable of handling the power requirements of electric racing vehicles, along with comprehensive protection mechanisms.</p>
+            
+            <h3>Safety Systems</h3>
+            <p>Safety is paramount in electric vehicle racing. The VCU incorporates multiple layers of protection including overcurrent detection, overtemperature monitoring, voltage monitoring, and emergency shutdown capabilities. The system features redundant safety circuits and failsafe operation modes to ensure driver and vehicle safety under all conditions.</p>
+            
+            <h3>Challenges & Solutions</h3>
+            <p>The main challenge was designing a system that could handle the high power requirements of electric racing while maintaining reliability and safety. This was solved through careful component selection, robust PCB design with proper thermal management, and extensive testing under simulated racing conditions. Another challenge was implementing real-time motor control algorithms, which was addressed through optimized code and dedicated hardware peripherals.</p>
+            
+            <h3>Results</h3>
+            <p>The FSAE VCU successfully powered the electric vehicle through multiple competitions, demonstrating reliable operation under extreme racing conditions. The system provided smooth motor control, excellent efficiency, and robust safety protection. The project contributed to the team's success in electric vehicle competitions and provided valuable insights into high-performance electric powertrain design.</p>
+          </div>
+          
+          <div class="project-details">
+            <h3>Project Details</h3>
+            <div class="detail-item">
+              <strong>Duration:</strong> 10 months
+            </div>
+            <div class="detail-item">
+              <strong>Team Size:</strong> 4 engineers
+            </div>
+            <div class="detail-item">
+              <strong>Role:</strong> Lead Electronics Engineer
+            </div>
+            <div class="detail-item">
+              <strong>Technologies:</strong> STM32, Motor Control, FOC, CAN bus, High-Power Electronics
+            </div>
+            <div class="detail-item">
+              <strong>Tools:</strong> STM32CubeIDE, Altium Designer, MATLAB/Simulink, Git
+            </div>
+            <div class="detail-item">
+              <strong>Power Rating:</strong> 80kW continuous, 120kW peak
+            </div>
+            <div class="detail-item">
+              <strong>Voltage Range:</strong> 300V - 400V DC
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h3>Justin Im</h3>
+    <p>Robotics Engineer • UCR Highlander Racing</p>
+    <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-credit">&copy; 2025 Justin Im. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

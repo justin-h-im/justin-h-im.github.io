@@ -24,13 +24,11 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 600, // animation duration in ms
-    easing: 'ease-out', // easing type
-    once: true // whether animation should happen only once
+    duration: 600,
+    easing: 'ease-out',
+    once: true
   });
 </script>
-
-
 
 <body>
   <header>
@@ -38,11 +36,11 @@
       <a href="#home" class="brand">Justin Im</a>
       <nav>
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
         <div class="nav-item dropdown">
-          <a href="#contact" class="nav-link">Contact ▾</a>  <!-- Contact Main Link -->
+          <a href="#contact" class="nav-link">Contact ▾</a>
           <div class="dropdown-menu">
             <div class="contact-text">imjustin679@gmail.com</div>
             <div class="contact-text">+1 (925) 399 9234</div>
@@ -66,11 +64,43 @@
       </div>
     </section>
     
-
     <section id="about">
       <h2>About Me</h2>
-      <p>replace with proper here</p>
-      <p>replace with proper here</p>
+      <p> Hello, my name is Justin Im. I am a robotics engineer and I am currently attending UC Riverside. I draw my inspiration from science fiction, 
+        and I hope to apply those ideas to projects that will improve living standards or help clean up the environment. </p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-header">
+            <h3>UCR Highlander Racing</h3>
+            <span class="experience-role">Firmware Lead</span>
+            <span class="experience-duration">2023 - Present</span>
+          </div>
+          <div class="experience-content">
+            <p>Lead engineer for electric vehicle systems in Formula SAE competition. Designing and implementing VCU, Dashboard, and DAQ. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Highlander Racing - VCU</h3>
+          <p>STM32 Based Vehicle Control Unit for FSAE EV Car with motor control and safety systems.</p>
+          <a href="fsae-vcu.html" class="button">View Project</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Highlander Racing - Dashboard</h3>
+          <p> STM32 based dashboard for FSAE EV Car updated in real time via CAN bus.</p>
+          <a href="fsae-dashboard.html" class="button">View Project</a>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
@@ -108,31 +138,6 @@
           </ul>
         </div>
       </div>
-    </section>
-    
-    
-    <section id="experience">
-      <h2>Experience</h2>
-      <!-- Experience content here -->
-    </section>
-    
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>FSAE Dashboard</h3>
-          <p>Telemetry system for real-time vehicle monitoring and diagnostics.</p>
-          <a href="#" class="button">View Project</a>
-        </div>
-    
-        <div class="project-card">
-          <h3>Kerminator</h3>
-          <p>Custom designed robotic manipulator with CAN bus integration.</p>
-          <a href="#" class="button">View Project</a>
-        </div>
-        <!-- Add more project cards -->
-      </div>
-
     </section>
     
   </main>
