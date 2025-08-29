@@ -65,55 +65,41 @@
         <div class="description-content">
           <div class="description-text">
             <h3>Overview</h3>
-            <p>The FSAE VCU (Vehicle Control Unit) is a sophisticated electronic control system designed specifically for Formula SAE electric vehicles. This project represents the heart of the electric powertrain, responsible for motor control, safety monitoring, and vehicle performance optimization in high-performance racing conditions.</p>
+            <p> The Vehicle Control Unit (VCU) is the center of the vehicle's electrical system. 
+              It is responsible for controlling the motor according to driver inputs while also managing safety systems such as ready to move and plausibility checks. 
+              The project utilizes ADC via GPIO to capture driver input and CAN bus to send torque requests to the inverter and the motor. 
+              The VCU is seamlessly integrated with a Cascadia PM100DX inverter and a Emrax 228 motor. 
+            </p>
             
             <h3>Key Features</h3>
             <ul>
-              <li>Advanced motor control with field-oriented control (FOC) algorithms</li>
-              <li>Real-time safety monitoring and emergency shutdown systems</li>
-              <li>High-current switching capabilities for electric motor control</li>
-              <li>Comprehensive fault detection and diagnostic systems</li>
               <li>CAN bus communication for system integration</li>
-              <li>Temperature and current monitoring with automatic protection</li>
               <li>Configurable motor parameters for performance tuning</li>
-              <li>Fail-safe operation with redundant safety circuits</li>
+              <li>ADC via GPIO to capture driver input</li>
+              <li>FSM to manage safety systems</li>
+              <li>APPS and BSE plausiblity checks</li>
             </ul>
-            
-            <h3>Technical Implementation</h3>
-            <p>The VCU is built around a high-performance microcontroller with dedicated motor control peripherals. It implements advanced motor control algorithms including field-oriented control for optimal efficiency and torque control. The system features high-current MOSFET switching circuits capable of handling the power requirements of electric racing vehicles, along with comprehensive protection mechanisms.</p>
-            
-            <h3>Safety Systems</h3>
-            <p>Safety is paramount in electric vehicle racing. The VCU incorporates multiple layers of protection including overcurrent detection, overtemperature monitoring, voltage monitoring, and emergency shutdown capabilities. The system features redundant safety circuits and failsafe operation modes to ensure driver and vehicle safety under all conditions.</p>
-            
-            <h3>Challenges & Solutions</h3>
-            <p>The main challenge was designing a system that could handle the high power requirements of electric racing while maintaining reliability and safety. This was solved through careful component selection, robust PCB design with proper thermal management, and extensive testing under simulated racing conditions. Another challenge was implementing real-time motor control algorithms, which was addressed through optimized code and dedicated hardware peripherals.</p>
-            
-            <h3>Results</h3>
-            <p>The FSAE VCU successfully powered the electric vehicle through multiple competitions, demonstrating reliable operation under extreme racing conditions. The system provided smooth motor control, excellent efficiency, and robust safety protection. The project contributed to the team's success in electric vehicle competitions and provided valuable insights into high-performance electric powertrain design.</p>
           </div>
           
           <div class="project-details">
             <h3>Project Details</h3>
             <div class="detail-item">
-              <strong>Duration:</strong> 10 months
+              <strong>Duration:</strong> 6 months - Ongoing
             </div>
             <div class="detail-item">
-              <strong>Team Size:</strong> 4 engineers
+              <strong>Team Size:</strong> 1 engineer
             </div>
             <div class="detail-item">
-              <strong>Role:</strong> Lead Electronics Engineer
+              <strong>Role:</strong> Lead Firmware Engineer
             </div>
             <div class="detail-item">
-              <strong>Technologies:</strong> STM32, Motor Control, FOC, CAN bus, High-Power Electronics
+              <strong>Technologies:</strong> STM32, Motor Control, FOC, CAN bus, High-Power Electronics, ADC, GPIO, FSM
             </div>
             <div class="detail-item">
-              <strong>Tools:</strong> STM32CubeIDE, Altium Designer, MATLAB/Simulink, Git
+              <strong>Tools:</strong> STM32CubeIDE, Git, Oscilloscopes, Multimeters, Power Supplies
             </div>
             <div class="detail-item">
-              <strong>Power Rating:</strong> 80kW continuous, 120kW peak
-            </div>
-            <div class="detail-item">
-              <strong>Voltage Range:</strong> 300V - 400V DC
+              <a href="https://github.com/UCR-FSAE/vcu25v2" target="_blank" class="github-button">View on GitHub</a>
             </div>
           </div>
         </div>

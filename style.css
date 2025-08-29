@@ -624,6 +624,27 @@ footer {
   color: #cccccc;
 }
 
+.github-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #333;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.github-button:hover {
+  background: #b55329;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(181, 83, 41, 0.4);
+}
+
 @media (max-width: 768px) {
   .project-hero-content h1 {
     font-size: 2.5rem;
