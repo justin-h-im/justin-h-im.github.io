@@ -11,14 +11,24 @@
 <a href="#home" class="scroll-top" title="Back to top">&#8679;</a>
 
 <script>
+  let ticking = false;
+  let lastScrollY = 0;
+
   window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('shrink');
-    } else {
-      header.classList.remove('shrink');
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const header = document.querySelector('header');
+        if (lastScrollY > 80) {
+          header.classList.add('shrink');
+        } else {
+          header.classList.remove('shrink');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  }, { passive: true });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -66,8 +76,20 @@
     
     <section id="about">
       <h2>About Me</h2>
-      <p> Hello, my name is Justin Im. I am a robotics engineer and I am currently attending UC Riverside. I draw my inspiration from science fiction, 
-        and I hope to apply those ideas to projects that will improve living standards or help clean up the environment. </p>
+      <p>Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in working with STM32 microcontrollers, real-time operating systems, and CAN bus communication. As a technical lead at Highlander Racing, I manage firmware development for Formula SAE electric vehicles. I draw inspiration from science fiction and hope to apply those ideas to projects that improve living standards and address environmental challenges.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-header">
+            <h3>University of California, Riverside</h3>
+            <span class="experience-role">B.S. in Robotics Engineering</span>
+            <span class="experience-duration">Expected June 2027</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="experience">
@@ -76,24 +98,51 @@
         <div class="experience-card">
           <div class="experience-header">
             <h3>UCR Highlander Racing</h3>
-            <span class="experience-role">Firmware Lead</span>
-            <span class="experience-duration">2023 - Present</span>
+            <span class="experience-role">CS Development Team Lead</span>
+            <span class="experience-duration">Dec 2023 - Present</span>
           </div>
           <div class="experience-content">
-            <p>Lead engineer for electric vehicle systems in Formula SAE competition. Designing and implementing VCU, Dashboard, and Thermistor Sense Module. </p>
+            <ul>
+              <li>Project managing a team of 10-20 people to develop firmware for FSAE electric vehicles</li>
+              <li>Designing and implementing Vehicle Control Unit (VCU) using STM32F7 with FreeRTOS for real-time motor control and safety systems</li>
+              <li>Creating driver dashboard with STM32F7 Discovery Board utilizing FreeRTOS for concurrent CAN bus communication and display updates</li>
+              <li>Leading development of custom Battery Management System using BQ79616 ICs and Teensy 4.1 for cell monitoring and CAN bus integration</li>
+              <li>Overseeing Thermistor Sense Module design using STM32 Bluepill and ESP-32 for thermal monitoring</li>
+              <li>Presenting software design choices to panels of alumni and industry professionals in design reviews</li>
+            </ul>
           </div>
         </div>
 
         <div class="experience-card">
-            <div class="experience-header">
-              <h3>Forge - ACM@UCR</h3>
-              <span class="experience-role">Project Director</span>
-              <span class="experience-duration">2024 - 2025</span>
-            </div>
-            <div class="experience-content">
-              <p> Project Director for Forge, a student-run organization that introduces students to embedded systems.</p>
-            </div>
+          <div class="experience-header">
+            <h3>ACM@UCR</h3>
+            <span class="experience-role">Software Engineer & Project Director</span>
+            <span class="experience-duration">Jun 2024 - Present</span>
           </div>
+          <div class="experience-content">
+            <ul>
+              <li>Developed autonomous drone project for navigating obstacle courses using Python, Raspberry Pi, and OpenCV</li>
+              <li>Implemented computer vision pipeline with HAAR Cascade model for cone detection</li>
+              <li>Built touch screen interface for Wizard-Chess game using C++ and Qt Creator</li>
+              <li>Contributed to Women in the Law (WITL) website using Node.js, React, Next.js, and Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <h3>UCR PRT Lab</h3>
+            <span class="experience-role">Undergraduate Student Researcher</span>
+            <span class="experience-duration">Mar 2025 - Present</span>
+          </div>
+          <div class="experience-content">
+            <ul>
+              <li>Investigating face detection and emotion recognition applied to infant research</li>
+              <li>Evaluating facial detection models (MTCNN, dlib, RetinaFace) with Emotion-FER+ for accuracy and performance</li>
+              <li>Implementing computer vision models using Python and Docker for analysis</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -101,27 +150,66 @@
       <h2>Projects</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <h3>Highlander Racing - VCU</h3>
-          <p>STM32 Based Vehicle Control Unit for FSAE EV Car with motor control and safety systems.</p>
-          <a href="fsae-vcu.html" class="button">View Project</a>
-        </div>
-        
-        <div class="project-card">
-          <h3>Highlander Racing - Dashboard</h3>
-          <p> STM32 based dashboard for FSAE EV Car updated in real time via CAN bus.</p>
-          <a href="fsae-dashboard.html" class="button">View Project</a>
+          <h3>Pomo</h3>
+          <span class="project-duration">Mar 2026 - Current</span>
+          <p>A productivity application designed to enhance focus and time management for users.</p>
+          <a href="pomo.html" class="button">View Project</a>
         </div>
 
         <div class="project-card">
-          <h3>Highlander Racing - Arduino Test Bench</h3>
-          <p> Arduino Based Test Bench to simulate the Inverter and Accumulator</p>
+          <h3>27E Custom Battery Management System</h3>
+          <span class="project-duration">Mar 2026 - Current</span>
+          <p>Leading R&D of a custom BMS for Highlander Racing's 27E competition car using 10 BQ79616 management units communicating to a Teensy 4.1 with CAN Bus output for cell voltage monitoring.</p>
+          <a href="fsae-27e-bms.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Raspberry Pi WiFi Extender</h3>
+          <span class="project-duration">ACM Project</span>
+          <p>A WiFi range extension project built on Raspberry Pi, extending network coverage and connectivity.</p>
+          <a href="raspberry-pi-wifi-extender.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>26E Thermistor Sense Module</h3>
+          <span class="project-duration">Oct 2025 - Current</span>
+          <p>STM32 Bluepill and ESP-32 based thermal monitoring module for Highlander Racing's battery pack. Collects multiplexed thermistor data, converts ADC values to temperature using calibration equations, and packages data into CAN messages.</p>
+          <a href="fsae-arduino-sense-module.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>26E Vehicle Control Unit</h3>
+          <span class="project-duration">Jun 2025 - Current</span>
+          <p>STM32F7 based Vehicle Control Unit implementing FSAE-compliant motor control with gradient equations for accelerator/brake pedal positions, torque curve calculations, and 500 kilobaud CAN bus communication to motor inverters.</p>
+          <a href="fsae-vcu.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>24E CAN Test Bench</h3>
+          <span class="project-duration">Apr 2025 (1 month)</span>
+          <p>Arduino UNO with CAN Shield device for broadcasting joystick ADC input over CAN bus. Built to validate Dashboard CAN bus sniffing capabilities and test firmware during development.</p>
           <a href="fsae-arduino-test-bench.html" class="button">View Project</a>
         </div>
 
         <div class="project-card">
-          <h3>Highlander Racing - Thermistor Sense Module </h3>
-          <p> STM32 based thermistor monitoring module for FSAE 26E</p>
-          <a href="fsae-arduino-sense-module.html" class="button">View Project</a>
+          <h3>Autonomous Drone Navigation</h3>
+          <span class="project-duration">Dec 2024 - Current</span>
+          <p>Python-based autonomous drone navigating obstacle courses using Raspberry Pi, OpenCV for cone detection, and trained HAAR Cascade models for real-time computer vision processing.</p>
+          <a href="acm-autonomous-drone.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>26E Driver Dashboard</h3>
+          <span class="project-duration">Sept 2024 - Current</span>
+          <p>STM32F7 Discovery Board dashboard leveraging FreeRTOS for concurrent CAN bus sniffing and real-time display updates. Validated with Hardware-in-Loop testing using Arduino CAN Shield test bench.</p>
+          <a href="fsae-dashboard.html" class="button">View Project</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Women in the Law (WITL) Website</h3>
+          <span class="project-duration">Jun 2024 - Aug 2024</span>
+          <p>Full-stack web development for WITL website fostering a community of students interested in pursuing a career in law. Built with React, Next.js, Tailwind CSS with modern development workflows using Prettier and Eslint.</p>
+          <a href="witl-website.html" class="button">View Project</a>
         </div>
       </div>
     </section>
@@ -135,30 +223,33 @@
             <li>C</li>
             <li>C++</li>
             <li>Python</li>
-            <li>Java</li>
+            <li>Verilog</li>
           </ul>
         </div>
-    
+
         <div class="skill-card">
           <h3>Embedded Systems</h3>
           <ul>
             <li>STM32 (HAL, FreeRTOS)</li>
             <li>Arduino</li>
-            <li>CAN bus</li>
+            <li>CAN Bus</li>
             <li>UART</li>
-            <li>ADC</li>
+            <li>ADC/GPIO</li>
+            <li>Finite State Machines (FSM)</li>
           </ul>
         </div>
-    
+
         <div class="skill-card">
-          <h3>Tools & Platforms</h3>
+          <h3>Platforms & Tools</h3>
           <ul>
+            <li>STM32CubeIDE</li>
+            <li>PlatformIO</li>
             <li>Git</li>
             <li>Linux</li>
-            <li>SSH</li>
-            <li>OpenCV</li>
-            <li>YOLOFace</li>
             <li>Raspberry Pi</li>
+            <li>OpenCV</li>
+            <li>ROS2</li>
+            <li>Solidworks</li>
           </ul>
         </div>
       </div>
@@ -168,13 +259,13 @@
 
   <footer class="footer">
     <h3>Justin Im</h3>
-    <p>Robotics Engineer • UCR Highlander Racing</p>
+    <p>Robotics Engineer • CS Development Team Lead at UCR Highlander Racing</p>
     <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
     <div class="social-icons">
       <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
       <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
     </div>
-    <p class="footer-credit">&copy; 2025 Justin Im. All rights reserved.</p>
+    <p class="footer-credit">&copy; 2026 Justin Im. All rights reserved.</p>
   </footer>
   
 </body>

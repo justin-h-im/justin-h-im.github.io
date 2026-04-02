@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Drone Navigation | Justin Im</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="brand">Justin Im</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#experience">Experience</a>
+        <div class="nav-item dropdown">
+          <a href="index.html#contact" class="nav-link">Contact ▾</a>
+          <div class="dropdown-menu">
+            <div class="contact-text">imjustin679@gmail.com</div>
+            <div class="contact-text">+1 (925) 399 9234</div>
+            <a href="https://github.com/justin-h-im" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-hero-content">
+        <h1>Autonomous Drone Navigation</h1>
+        <p>Computer vision-based autonomous obstacle course navigation system</p>
+        <a href="index.html#projects" class="button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="project-pictures">
+      <div class="container">
+        <h2>Project Gallery</h2>
+        <div class="picture-grid">
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/placeholder.jpg" alt="Autonomous Drone Platform" />
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/placeholder.jpg" alt="Cone Detection in Action" />
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/placeholder.jpg" alt="Obstacle Course Setup" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-description">
+      <div class="container">
+        <h2>Project Description</h2>
+        <div class="description-content">
+          <div class="description-text">
+            <h3>Overview</h3>
+            <p>The Autonomous Drone Navigation project is a student-led initiative at ACM@UCR to develop a fully autonomous unmanned aerial vehicle capable of navigating complex obstacle courses. The system combines computer vision, real-time image processing, and flight control to autonomously detect and navigate around obstacles.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>Real-time video streaming from drone camera to ground station</li>
+              <li>OpenCV-based cone detection and tracking</li>
+              <li>HAAR Cascade classifier for robust object recognition</li>
+              <li>Python-based processing pipeline on Raspberry Pi</li>
+              <li>Local server for frame capture and analysis</li>
+              <li>Autonomous flight path planning and obstacle avoidance</li>
+              <li>Scalable architecture for future enhancements</li>
+            </ul>
+
+            <h3>Technical Architecture</h3>
+            <p>The system architecture consists of three main components: the drone itself with a camera and Raspberry Pi Zero for onboard processing, an intermediate local server that captures and queues video frames, and a laptop running the main computer vision pipeline. The Raspberry Pi streams video frames to the server, which are then processed by OpenCV for cone detection. The detection results inform autonomous flight decisions through a feedback loop.</p>
+
+            <h3>Computer Vision Pipeline</h3>
+            <p>The vision pipeline employs a trained HAAR Cascade model for cone detection. During development, we created a custom training dataset by scraping the internet for positive samples (cone images) and negative samples (background images without cones). A Python script with a graphical interface was developed to manage the training data collection and model training process, making it easy for team members to contribute datasets.</p>
+
+            <h3>Challenges & Solutions</h3>
+            <p>One of the main challenges was reliably detecting orange traffic cones under varying lighting conditions and from different altitudes. This was addressed by training multiple HAAR Cascade models with diverse datasets and implementing confidence thresholding to filter false positives. The distributed processing architecture (edge processing on Pi + cloud processing on laptop) helped optimize latency and computational efficiency.</p>
+
+            <h3>Results & Learning Outcomes</h3>
+            <p>The project successfully demonstrated autonomous navigation through an obstacle course, with the drone autonomously identifying cones and adjusting flight paths to avoid collisions. Beyond technical achievements, the project provided valuable experience in computer vision, embedded Linux systems, drone programming, and collaborative robot development.</p>
+          </div>
+
+          <div class="project-details">
+            <h3>Project Details</h3>
+            <div class="detail-item">
+              <strong>Duration:</strong> Dec 2024 - Current
+            </div>
+            <div class="detail-item">
+              <strong>Team Size:</strong> 8-12 students
+            </div>
+            <div class="detail-item">
+              <strong>Role:</strong> Project Director & Lead Software Engineer
+            </div>
+            <div class="detail-item">
+              <strong>Technologies:</strong> OpenCV, HAAR Cascade, Computer Vision, Autonomous Systems, Drone Flight Control
+            </div>
+            <div class="detail-item">
+              <strong>Languages:</strong> Python
+            </div>
+            <div class="detail-item">
+              <strong>Hardware:</strong> Raspberry Pi Zero, Drone Platform, USB Camera/CSI Camera
+            </div>
+            <div class="detail-item">
+              <strong>Tools:</strong> OpenCV, PuTTY, SSH, Python Flask (server), Git
+            </div>
+            <div class="detail-item">
+              <a href="https://github.com/acm-ucr/autonomous-drone" target="_blank" class="github-button">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h3>Justin Im</h3>
+    <p>Robotics Engineer • Software Engineer at ACM@UCR</p>
+    <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-credit">&copy; 2026 Justin Im. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

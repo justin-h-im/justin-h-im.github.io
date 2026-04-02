@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FSAE VCU | Justin Im</title>
+  <title>FSAE CAN Test Bench | Justin Im</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
@@ -33,8 +33,8 @@
   <main>
     <section class="project-hero">
       <div class="project-hero-content">
-        <h1>FSAE VCU</h1>
-        <p>Vehicle Control Unit for FSAE electric vehicle with motor control and safety systems</p>
+        <h1>24E CAN Test Bench</h1>
+        <p>Hardware-in-Loop testing platform for FSAE vehicle firmware validation</p>
         <a href="index.html#projects" class="button">← Back to Projects</a>
       </div>
     </section>
@@ -44,10 +44,10 @@
         <h2>Project Gallery</h2>
         <div class="picture-grid">
           <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-main.jpeg" alt="FSAE VCU Main Board" />
+            <img src="images/placeholder.jpg" alt="CAN Test Bench Setup" />
           </div>
           <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-fsm.jpg" alt="FSAE VCU FSM Design" />
+            <img src="images/placeholder.jpg" alt="Arduino with CAN Shield" />
           </div>
         </div>
       </div>
@@ -59,45 +59,51 @@
         <div class="description-content">
           <div class="description-text">
             <h3>Overview</h3>
-            <p>The Vehicle Control Unit (VCU) is the core of the FSAE electric vehicle's electrical architecture and safety systems. It orchestrates all motor control operations, implements critical safety features required by FSAE rules, and communicates with the inverter and other vehicle systems over the CAN bus. The VCU transforms driver inputs into precise motor torque commands while maintaining strict compliance with safety regulations.</p>
+            <p>The CAN Test Bench is a critical tool for validating Vehicle Control Unit (VCU) and Dashboard firmware in a controlled laboratory environment. This Hardware-in-Loop (HIL) testing platform simulates vehicle inputs and the CAN bus communication that occurs during actual racing conditions.</p>
 
             <h3>Key Features</h3>
             <ul>
-              <li>FSAE-compliant Accelerator Pedal Position Sensor (APPS) and Brake System Evaluation (BSE) plausibility checks</li>
-              <li>Gradient-based accelerator and brake pedal position calculations via ADC inputs</li>
-              <li>Torque curve implementation for optimal motor performance across RPM ranges</li>
-              <li>Real-time torque command generation and CAN bus transmission at 500 kilobaud</li>
-              <li>Ready to Move (RTM) system implementation for driver safety</li>
-              <li>Motor controller integration with Cascadia PM100DX inverter and Emrax 228 motor</li>
-              <li>Slew rate filtering to ensure smooth, intentional motor acceleration</li>
-              <li>100 millisecond rule compliance for safety-critical operations</li>
-              <li>Both Simple Loop and Finite State Machine (FSM) architecture implementations</li>
-              <li>Hardware abstraction via Prototype VCU hat for simplified integration</li>
+              <li>Arduino UNO microcontroller for test signal generation</li>
+              <li>Arduino CAN Shield (MCP2515 based) for CAN bus communication</li>
+              <li>Joystick input simulation for driver commands</li>
+              <li>ADC-based analog signal generation</li>
+              <li>Real-time CAN message broadcasting at 500 kilobaud</li>
+              <li>Flexible configuration for various test scenarios</li>
+              <li>Cost-effective and quick to iterate</li>
             </ul>
+
+            <h3>Technical Implementation</h3>
+            <p>The test bench uses an Arduino UNO to read a joystick connected to its ADC inputs, converting analog stick positions into CAN messages that are then broadcast on the CAN bus at 500 kilobaud. This simulates the accelerator and brake pedal inputs that would normally come from the driver interface. The system allows firmware engineers to test VCU logic without assembling a complete vehicle.</p>
+
+            <h3>Development Workflow</h3>
+            <p>Developers use this test bench as part of their development cycle before hardware integration testing. They can rapidly iterate on firmware changes, test edge cases, and validate CAN communication protocols. The test bench proved invaluable for accelerating development of both the Dashboard and VCU firmware.</p>
+
+            <h3>Results</h3>
+            <p>The CAN test bench successfully enabled rapid firmware development and debugging, reducing the time needed for full-vehicle integration testing. Many firmware bugs were caught and fixed before first vehicle startup, significantly improving reliability and safety.</p>
           </div>
-          
+
           <div class="project-details">
             <h3>Project Details</h3>
             <div class="detail-item">
-              <strong>Duration:</strong> Jun 2025 - Current
+              <strong>Duration:</strong> Apr 2025 (1 month)
             </div>
             <div class="detail-item">
-              <strong>Team Size:</strong> 3-5 firmware engineers
+              <strong>Team Size:</strong> 1-2 engineers
             </div>
             <div class="detail-item">
-              <strong>Role:</strong> Lead Firmware Engineer & CS Team Lead
+              <strong>Role:</strong> Design Engineer
             </div>
             <div class="detail-item">
-              <strong>Microcontroller:</strong> STM32F7 Nucleo Board
+              <strong>Technologies:</strong> CAN Bus, ADC, Joystick Input, MCP2515
             </div>
             <div class="detail-item">
-              <strong>Technologies:</strong> STM32, FreeRTOS (optional), Motor Control, CAN Bus, ADC, GPIO, Torque Curves, Safety Systems, FSM Design
+              <strong>Languages:</strong> Arduino C++
             </div>
             <div class="detail-item">
-              <strong>Tools:</strong> STM32CubeIDE, Git, Oscilloscopes, Logic Analyzers, Multimeters, CAN Bus Analyzers, Power Supplies
+              <strong>Tools:</strong> Arduino IDE, Oscilloscope, CAN Bus Analyzer
             </div>
             <div class="detail-item">
-              <a href="https://github.com/UCR-FSAE/vcu26E" target="_blank" class="github-button">View on GitHub</a>
+              <a href="https://github.com/UCR-FSAE/can-test-bench" target="_blank" class="github-button">View on GitHub</a>
             </div>
           </div>
         </div>
@@ -107,7 +113,7 @@
 
   <footer class="footer">
     <h3>Justin Im</h3>
-    <p>Robotics Engineer • UCR Highlander Racing</p>
+    <p>Robotics Engineer • CS Development Team Lead at UCR Highlander Racing</p>
     <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
     <div class="social-icons">
       <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
