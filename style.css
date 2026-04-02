@@ -28,6 +28,7 @@ header {
   padding: 3rem 5vw;
   z-index: 100;
   border-bottom: 1px solid #333333;
+  transition: padding 0.3s ease-out;
 }
 
 .header-content {
@@ -347,8 +348,16 @@ a.button:focus {
 
 .project-card h3 {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #ffffff;
+}
+
+.project-duration {
+  display: block;
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .project-card p {
@@ -639,6 +648,49 @@ footer {
 .github-button:hover {
   background: #000000;
   color: #ffffff;
+}
+
+.github-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.github-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  min-width: 200px;
+  z-index: 200;
+  margin-top: 0.5rem;
+}
+
+.github-dropdown .dropdown-menu a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.github-dropdown .dropdown-menu a:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.github-dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 @media (max-width: 768px) {

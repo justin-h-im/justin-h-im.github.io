@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FSAE VCU | Justin Im</title>
+  <title>Raspberry Pi WiFi Extender | Justin Im</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
@@ -33,8 +33,8 @@
   <main>
     <section class="project-hero">
       <div class="project-hero-content">
-        <h1>FSAE VCU</h1>
-        <p>Vehicle Control Unit for FSAE electric vehicle with motor control and safety systems</p>
+        <h1>Raspberry Pi WiFi Extender</h1>
+        <p>Network extension project leveraging Raspberry Pi hardware</p>
         <a href="index.html#projects" class="button">← Back to Projects</a>
       </div>
     </section>
@@ -44,10 +44,13 @@
         <h2>Project Gallery</h2>
         <div class="picture-grid">
           <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-main.jpeg" alt="FSAE VCU Main Board" />
+            <img src="images/placeholder.jpg" alt="Raspberry Pi Hardware Setup" />
           </div>
           <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-fsm.jpg" alt="FSAE VCU FSM Design" />
+            <img src="images/placeholder.jpg" alt="Network Configuration" />
+          </div>
+          <div class="picture-item" data-aos="fade-up">
+            <img src="images/placeholder.jpg" alt="WiFi Coverage Demonstration" />
           </div>
         </div>
       </div>
@@ -59,45 +62,51 @@
         <div class="description-content">
           <div class="description-text">
             <h3>Overview</h3>
-            <p>The Vehicle Control Unit (VCU) is the core of the FSAE electric vehicle's electrical architecture and safety systems. It orchestrates all motor control operations, implements critical safety features required by FSAE rules, and communicates with the inverter and other vehicle systems over the CAN bus. The VCU transforms driver inputs into precise motor torque commands while maintaining strict compliance with safety regulations.</p>
+            <p>The Raspberry Pi WiFi Extender project demonstrates practical network engineering on embedded systems. This project transforms a Raspberry Pi into a wireless network extender, extending WiFi coverage to areas with weak signal strength.</p>
 
-            <h3>Key Features</h3>
+            <h3>Project Goals</h3>
             <ul>
-              <li>FSAE-compliant Accelerator Pedal Position Sensor (APPS) and Brake System Evaluation (BSE) plausibility checks</li>
-              <li>Gradient-based accelerator and brake pedal position calculations via ADC inputs</li>
-              <li>Torque curve implementation for optimal motor performance across RPM ranges</li>
-              <li>Real-time torque command generation and CAN bus transmission at 500 kilobaud</li>
-              <li>Ready to Move (RTM) system implementation for driver safety</li>
-              <li>Motor controller integration with Cascadia PM100DX inverter and Emrax 228 motor</li>
-              <li>Slew rate filtering to ensure smooth, intentional motor acceleration</li>
-              <li>100 millisecond rule compliance for safety-critical operations</li>
-              <li>Both Simple Loop and Finite State Machine (FSM) architecture implementations</li>
-              <li>Hardware abstraction via Prototype VCU hat for simplified integration</li>
+              <li>Extend wireless network coverage using Raspberry Pi hardware</li>
+              <li>Configure network bridging and routing protocols</li>
+              <li>Optimize signal strength and connectivity</li>
+              <li>Create a low-cost alternative to commercial WiFi extenders</li>
             </ul>
+
+            <h3>Hardware Configuration</h3>
+            <p>The project utilizes a Raspberry Pi as the central processing unit, paired with wireless networking adapters to receive the existing WiFi signal and broadcast an extended network. The hardware setup is designed to be compact and energy-efficient while maintaining stable network performance.</p>
+
+            <h3>Network Implementation</h3>
+            <p>The WiFi extender operates by bridging wireless interfaces, allowing the Raspberry Pi to receive signals on one adapter and retransmit them on another. This approach leverages Linux networking capabilities and custom configuration scripts to manage connection stability and signal optimization.</p>
+
+            <h3>Technical Challenges</h3>
+            <p>Key challenges addressed include managing dual wireless interfaces, maintaining sufficient bandwidth across the bridge, minimizing latency, and ensuring reliable automatic reconnection in case of signal loss. These were solved through careful tuning of network parameters and implementation of monitoring scripts.</p>
+
+            <h3>Learning Outcomes</h3>
+            <p>This project provided comprehensive experience in embedded Linux networking, wireless protocols, network bridge configuration, and hands-on troubleshooting of complex connectivity issues on resource-constrained devices.</p>
           </div>
-          
+
           <div class="project-details">
             <h3>Project Details</h3>
             <div class="detail-item">
-              <strong>Duration:</strong> Jun 2025 - Current
+              <strong>Organization:</strong> ACM@UCR
             </div>
             <div class="detail-item">
-              <strong>Team Size:</strong> 3-5 firmware engineers
+              <strong>Role:</strong> Developer
             </div>
             <div class="detail-item">
-              <strong>Role:</strong> Lead Firmware Engineer & CS Team Lead
+              <strong>Hardware:</strong> Raspberry Pi, Wireless Network Adapters
             </div>
             <div class="detail-item">
-              <strong>Microcontroller:</strong> STM32F7 Nucleo Board
+              <strong>Technologies:</strong> Linux Networking, Network Bridging, WiFi Protocols
             </div>
             <div class="detail-item">
-              <strong>Technologies:</strong> STM32, FreeRTOS (optional), Motor Control, CAN Bus, ADC, GPIO, Torque Curves, Safety Systems, FSM Design
+              <strong>Languages:</strong> Bash, Python
             </div>
             <div class="detail-item">
-              <strong>Tools:</strong> STM32CubeIDE, Git, Oscilloscopes, Logic Analyzers, Multimeters, CAN Bus Analyzers, Power Supplies
+              <strong>Tools:</strong> Linux, iptables, hostapd, dnsmasq, SSH
             </div>
             <div class="detail-item">
-              <a href="https://github.com/UCR-FSAE/vcu26E" target="_blank" class="github-button">View on GitHub</a>
+              <a href="https://github.com/acm-ucr/wifi-extender" target="_blank" class="github-button">View on GitHub</a>
             </div>
           </div>
         </div>
@@ -107,7 +116,7 @@
 
   <footer class="footer">
     <h3>Justin Im</h3>
-    <p>Robotics Engineer • UCR Highlander Racing</p>
+    <p>Robotics Engineer • Developer at ACM@UCR</p>
     <p><a href="mailto:imjustin679@gmail.com">imjustin679@gmail.com</a></p>
     <div class="social-icons">
       <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |

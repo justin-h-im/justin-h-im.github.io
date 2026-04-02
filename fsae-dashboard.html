@@ -65,48 +65,51 @@
         <div class="description-content">
           <div class="description-text">
             <h3>Overview</h3>
-            <p>The FSAE Dashboard is a comprehensive telemetry system designed for real-time vehicle monitoring and diagnostics in Formula SAE racing. This project addresses the critical need for drivers and engineers to monitor vehicle performance during testing and competition.</p>
+            <p>The FSAE Dashboard is the driver's primary interface for real-time vehicle telemetry and system diagnostics during competitions and testing. Built on an STM32F7 Discovery Board with FreeRTOS real-time operating system, the dashboard simultaneously acquires data from the vehicle's CAN bus network while refreshing display information. It serves as both an information display and a critical safety system, providing drivers with essential vehicle status data during high-speed operation.</p>
             
             <h3>Key Features</h3>
             <ul>
-              <li>Real-time sensor data acquisition and processing</li>
-              <li>Custom GUI with touchscreen interface optimized for racing conditions</li>
-              <li>Comprehensive data logging and analysis capabilities</li>
-              <li>Wireless data transmission to pit crew for real-time monitoring</li>
-              <li>Battery voltage and temperature monitoring with alerts</li>
-              <li>Engine RPM and vehicle speed tracking</li>
-              <li>G-force and acceleration measurements</li>
+              <li>STM32F7 Discovery Board with integrated LCD display</li>
+              <li>FreeRTOS-based multitasking for concurrent CAN bus monitoring and display updates</li>
+              <li>Real-time CAN bus message filtering and parsing</li>
+              <li>Simultaneous display refresh independent of communication latency</li>
+              <li>Custom GUI optimized for readability at high vehicle speeds</li>
+              <li>Battery voltage and temperature monitoring with visual alerts</li>
+              <li>Motor speed and torque command visualization</li>
+              <li>Accumulator energy state display</li>
+              <li>Hardware-in-Loop (HIL) test validation via Arduino CAN Shield test bench</li>
+              <li>FSAE rules-compliant failure mode handling</li>
             </ul>
             
             <h3>Technical Implementation</h3>
-            <p>The system is built around an STM32F4 microcontroller running FreeRTOS for reliable real-time operation. It integrates multiple automotive sensors through CAN bus communication, providing a robust and scalable architecture. The touchscreen interface is designed for easy operation while wearing racing gloves.</p>
+            <p>The system uses FreeRTOS to create two main tasks: a high-priority CAN bus sniffing task that continuously monitors incoming vehicle data, and a lower-priority display update task that refreshes the LCD with the latest vehicle state. This separation of concerns ensures that CAN message reception is never delayed by display refresh operations, guaranteeing that critical vehicle data is always captured with minimal latency. The STM32F7's processing capability is leveraged to maximize real-time performance.</p>
             
-            <h3>Challenges & Solutions</h3>
-            <p>One of the main challenges was ensuring reliable operation in the harsh racing environment with high vibration and temperature variations. This was solved through careful component selection, robust PCB design, and comprehensive testing under simulated racing conditions.</p>
-            
-            <h3>Results</h3>
-            <p>The dashboard successfully provided real-time data during FSAE competitions, helping the team optimize vehicle performance and identify potential issues before they became critical. The system's reliability and ease of use contributed to improved lap times and vehicle consistency.</p>
+            <h3>Testing & Validation</h3>
+            <p>The dashboard was thoroughly validated using a custom CAN test bench built with an Arduino UNO and CAN Shield. This Hardware-in-Loop (HIL) setup simulates realistic vehicle operation by broadcasting torque commands, speed data, and temperature information. The test bench enabled rapid iteration and debugging of the dashboard firmware before full vehicle integration, significantly reducing development time.</p>
           </div>
           
           <div class="project-details">
             <h3>Project Details</h3>
             <div class="detail-item">
-              <strong>Duration:</strong> 8 months
+              <strong>Duration:</strong> Sept 2024 - Current
             </div>
             <div class="detail-item">
-              <strong>Team Size:</strong> 3 engineers
+              <strong>Team Size:</strong> 2-3 firmware engineers
             </div>
             <div class="detail-item">
-              <strong>Role:</strong> Lead Embedded Systems Engineer
+              <strong>Role:</strong> Lead Firmware Engineer & CS Team Lead
             </div>
             <div class="detail-item">
-              <strong>Technologies:</strong> STM32, FreeRTOS, CAN bus, Embedded C
+              <strong>Microcontroller:</strong> STM32F7 Discovery Board
             </div>
             <div class="detail-item">
-              <strong>Tools:</strong> STM32CubeIDE, Altium Designer, Git
+              <strong>Technologies:</strong> STM32F7, FreeRTOS, CAN Bus, Real-time Operating Systems, Embedded C, Display Drivers
             </div>
             <div class="detail-item">
-              <a href="https://github.com/justin-h-im/fsae-dashboard" target="_blank" class="github-button">View on GitHub</a>
+              <strong>Tools:</strong> STM32CubeIDE, Git, CAN Bus Analyzers, Oscilloscopes, Logic Analyzers
+            </div>
+            <div class="detail-item">
+              <a href="https://github.com/UCR-FSAE/dashboard26E" target="_blank" class="github-button">View on GitHub</a>
             </div>
           </div>
         </div>
@@ -122,7 +125,7 @@
       <a href="https://github.com/justin-h-im" target="_blank">GitHub</a> |
       <a href="https://linkedin.com/in/justin-h-im" target="_blank">LinkedIn</a>
     </div>
-    <p class="footer-credit">&copy; 2025 Justin Im. All rights reserved.</p>
+    <p class="footer-credit">&copy; 2026 Justin Im. All rights reserved.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
