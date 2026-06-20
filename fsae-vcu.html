@@ -33,8 +33,8 @@
   <main>
     <section class="project-hero">
       <div class="project-hero-content">
-        <h1>FSAE VCU</h1>
-        <p>Vehicle Control Unit for FSAE electric vehicle with motor control and safety systems</p>
+        <h1>VCU26E</h1>
+        <p> Rules Compliant VCU for Highlander Racing's 26E EV car. </p>
         <a href="index.html#projects" class="button">← Back to Projects</a>
       </div>
     </section>
@@ -42,12 +42,19 @@
     <section class="project-pictures">
       <div class="container">
         <h2>Project Gallery</h2>
-        <div class="picture-grid">
-          <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-main.jpeg" alt="FSAE VCU Main Board" />
+        <div class="gallery-container">
+          <div class="picture-grid picture-grid-vertical">
+            <div class="picture-item" data-aos="fade-up">
+              <img src="images/fsae-vcu-main.jpeg" alt="FSAE VCU Main Board" />
+            </div>
+            <div class="picture-item" data-aos="fade-up">
+              <img src="images/VCU-on-FOC.jpg" alt="FSAE VCU Schematic" />
+            </div>
           </div>
-          <div class="picture-item" data-aos="fade-up">
-            <img src="images/fsae-vcu-fsm.jpg" alt="FSAE VCU FSM Design" />
+          <div class="picture-grid">
+            <div class="picture-item" data-aos="fade-up">
+              <img src="images/VCU26E Flowchart.jpg" alt="FSAE VCU Design" />
+            </div>
           </div>
         </div>
       </div>
@@ -55,31 +62,33 @@
 
     <section class="project-description">
       <div class="container">
-        <h2>Project Description</h2>
+        <h2>Description</h2>
         <div class="description-content">
           <div class="description-text">
             <h3>Overview</h3>
-            <p>The Vehicle Control Unit (VCU) is the core of the FSAE electric vehicle's electrical architecture and safety systems. It orchestrates all motor control operations, implements critical safety features required by FSAE rules, and communicates with the inverter and other vehicle systems over the CAN bus. The VCU transforms driver inputs into precise motor torque commands while maintaining strict compliance with safety regulations.</p>
+            <p> The Vehicle Control Unit (VCU) is the brain of the 26E car. Emphasis was placed on rules compliance and reliability, hence an incredibly simple yet tested design.
+              The core code operates in a simple while loop, ensuring easy debugging and maintenance.
+            </p>
 
             <h3>Key Features</h3>
             <ul>
               <li>FSAE-compliant Accelerator Pedal Position Sensor (APPS) and Brake System Evaluation (BSE) plausibility checks</li>
-              <li>Gradient-based accelerator and brake pedal position calculations via ADC inputs</li>
-              <li>Torque curve implementation for optimal motor performance across RPM ranges</li>
+              <li>Gradient-based accelerator position calculations via ADC inputs</li>
               <li>Real-time torque command generation and CAN bus transmission at 500 kilobaud</li>
               <li>Ready to Move (RTM) system implementation for driver safety</li>
               <li>Motor controller integration with Cascadia PM100DX inverter and Emrax 228 motor</li>
-              <li>Slew rate filtering to ensure smooth, intentional motor acceleration</li>
               <li>100 millisecond rule compliance for safety-critical operations</li>
-              <li>Both Simple Loop and Finite State Machine (FSM) architecture implementations</li>
-              <li>Hardware abstraction via Prototype VCU hat for simplified integration</li>
+              <li>Hardware abstraction via Prototype VCU hat for simplified integration, later replaced with the 
+                Front-of-Car Power Distribution Board </li>
+              <li>Integrated convenient pedal recalibration function for easy maintenance</li>
+              <li>Edited hardware option bytes to ensure VCU automatic startup</li>
             </ul>
           </div>
           
           <div class="project-details">
-            <h3>Project Details</h3>
+            <h3>Details</h3>
             <div class="detail-item">
-              <strong>Duration:</strong> Jun 2025 - Current
+              <strong>Duration:</strong> Jun 2025 - Jun 2026
             </div>
             <div class="detail-item">
               <strong>Team Size:</strong> 3-5 firmware engineers
@@ -91,10 +100,10 @@
               <strong>Microcontroller:</strong> STM32F7 Nucleo Board
             </div>
             <div class="detail-item">
-              <strong>Technologies:</strong> STM32, FreeRTOS (optional), Motor Control, CAN Bus, ADC, GPIO, Torque Curves, Safety Systems, FSM Design
+              <strong>Technologies:</strong> STM32, Motor Control, CAN Bus, ADC, GPIO, Timers
             </div>
             <div class="detail-item">
-              <strong>Tools:</strong> STM32CubeIDE, Git, Oscilloscopes, Logic Analyzers, Multimeters, CAN Bus Analyzers, Power Supplies
+              <strong>Tools:</strong> STM32CubeIDE, Git, Oscilloscopes, Multimeters, CAN Bus Analyzers, Power Supplies, Linear Potentiometers, Buzzers
             </div>
             <div class="detail-item">
               <a href="https://github.com/UCR-FSAE/vcu26E" target="_blank" class="github-button">View on GitHub</a>
