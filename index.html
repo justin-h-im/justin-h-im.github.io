@@ -7,48 +7,20 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
-
-<a href="#home" class="scroll-top" title="Back to top">&#8679;</a>
-
-<script>
-  let ticking = false;
-  let lastScrollY = 0;
-
-  window.addEventListener('scroll', () => {
-    lastScrollY = window.scrollY;
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const header = document.querySelector('header');
-        if (lastScrollY > 80) {
-          header.classList.add('shrink');
-        } else {
-          header.classList.remove('shrink');
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 600,
-    easing: 'ease-out',
-    once: true
-  });
-</script>
-
 <body>
-  <header>
+
+  <a href="#home" class="scroll-top" title="Back to top">&#8679;</a>
+
+  <header class="header">
     <div class="header-content">
       <a href="#home" class="brand">Justin Im</a>
       <nav>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        
         <div class="nav-item dropdown">
           <a href="#contact" class="nav-link">Contact ▾</a>
           <div class="dropdown-menu">
@@ -63,20 +35,84 @@
   </header>
   
   <main>
-    <section id="home" class="home-container">
-      <div class="home-text">
-        <h1>Justin Im</h1>
-        <p>Engineer | Developer | Creator</p>
-        <a href="#projects" class="button">View Projects</a>
+    
+    <section id="home" class="home-container" style="position: relative; overflow: hidden;">
+      
+      <div style="position: absolute; top: -5%; left: -5%; font-size: 15rem; font-family: 'Chakra Petch', sans-serif; font-weight: 700; color: rgba(255,255,255,0.02); z-index: 0; pointer-events: none; user-select: none; line-height: 0.8;">
+        SYS<br>ENG
       </div>
-      <div class="home-image">
-        <img src="images/profile.jpg" alt="Justin Im photo" />
+
+      <div class="home-text" style="position: relative; z-index: 1;">
+        <div style="width: 8px; height: 8px; background-color: #ff3333; margin-bottom: 1rem;"></div>
+        
+        <h1 style="font-size: 4rem; text-shadow: 2px 2px 0 #333;">JUSTIN IM</h1>
+        
+        <div class="decal-checker"></div>
+        
+        <p style="font-family: 'Chakra Petch', sans-serif; text-transform: uppercase; color: #aaa; letter-spacing: 1px;">
+          Robotics Engineer <span style="color: #fff;">//</span> CS Development Team Lead<br>
+          UCR Highlander Racing
+        </p>
+        <a href="#projects" class="button" style="margin-top: 1rem; border-width: 2px;">[ INIT PROJECTS ]</a>
+      </div>
+
+      <div class="home-image" style="position: relative; z-index: 1;">
+        <div style="padding: 10px; border: 1px solid #333; position: relative; max-width: 350px;">
+          <div style="position: absolute; top: -4px; left: -4px; width: 8px; height: 8px; background: #fff;"></div>
+          <div style="position: absolute; bottom: -4px; right: -4px; width: 8px; height: 8px; background: #fff;"></div>
+          <img src="images/Live-Car-Work.jpg" alt="Highlander Racing Vehicle" style="border-radius: 0; width: 100%; height: auto; display: block;" />
+        </div>
       </div>
     </section>
     
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in working with STM32 microcontrollers, real-time operating systems, and CAN bus communication. As a technical lead at Highlander Racing, I manage firmware development for Formula SAE electric vehicles. I draw inspiration from science fiction and hope to apply those ideas to projects that improve living standards and address environmental challenges.</p>
+      <p>Hello, I'm Justin Im, a Robotics Engineering student at UC Riverside passionate about embedded systems and firmware development. I specialize in working with STM32 microcontrollers, real-time operating systems, and CAN bus communication. As a technical lead at Highlander Racing, I manage firmware development for UCR's Formula SAE electric vehicles. 
+        In my spare time, I draw inspiration from science fiction and apply those ideas to projects aimed to improve living standards, lifestyles, and environmental sustainability.</p>
+    </section>
+
+    <section id="carousel">
+      <h2>Project Highlights</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-prev" aria-label="Previous slide">
+          <span>&lt;</span>
+        </button>
+        
+        <div class="carousel-wrapper">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <div class="carousel-frame">
+                <div class="carousel-corner-bracket top-left"></div>
+                <div class="carousel-corner-bracket top-right"></div>
+                <img src="images/VCU-Dash-Focus.jpg" alt="VCU Dashboard Focus" class="carousel-image" />
+                <div class="carousel-corner-bracket bottom-left"></div>
+                <div class="carousel-corner-bracket bottom-right"></div>
+              </div>
+              <p class="carousel-caption">VCU Dashboard Integration</p>
+            </div>
+            
+            <div class="carousel-slide">
+              <div class="carousel-frame">
+                <div class="carousel-corner-bracket top-left"></div>
+                <div class="carousel-corner-bracket top-right"></div>
+                <img src="images/VCU-Dash-Focus.jpg" alt="VCU Dashboard Focus" class="carousel-image" />
+                <div class="carousel-corner-bracket bottom-left"></div>
+                <div class="carousel-corner-bracket bottom-right"></div>
+              </div>
+              <p class="carousel-caption">VCU Firmware Development</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Next slide">
+          <span>&gt;</span>
+        </button>
+      </div>
+
+      <div class="carousel-dots">
+        <button class="dot active" aria-label="Slide 1"></button>
+        <button class="dot" aria-label="Slide 2"></button>
+      </div>
     </section>
 
     <section id="education">
@@ -95,6 +131,7 @@
     <section id="experience">
       <h2>Experience</h2>
       <div class="experience-grid">
+        
         <div class="experience-card">
           <div class="experience-header">
             <h3>UCR Highlander Racing</h3>
@@ -143,12 +180,14 @@
             </ul>
           </div>
         </div>
+        
       </div>
     </section>
     
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects-grid">
+        
         <div class="project-card">
           <h3>Pomo</h3>
           <span class="project-duration">Mar 2026 - Current</span>
@@ -211,6 +250,7 @@
           <p>Full-stack web development for WITL website fostering a community of students interested in pursuing a career in law. Built with React, Next.js, Tailwind CSS with modern development workflows using Prettier and Eslint.</p>
           <a href="witl-website.html" class="button">View Project</a>
         </div>
+        
       </div>
     </section>
 
@@ -267,6 +307,71 @@
     </div>
     <p class="footer-credit">&copy; 2026 Justin Im. All rights reserved.</p>
   </footer>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true
+    });
+
+    // Optimized Header Shrink and Layout Performance Scroll Logic
+    let ticking = false;
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+      lastScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const header = document.querySelector('.header');
+          if (header) {
+            if (lastScrollY > 80) {
+              header.classList.add('shrink');
+            } else {
+              header.classList.remove('shrink');
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Carousel Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[n].classList.add('active');
+      dots[n].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+    document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+    });
+  </script>
 </body>
 </html>
